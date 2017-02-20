@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>float</title>
+  <meta content="UTF-8">
+  <style>
+    *{
+      margin: 0px;
+      padding: 0px;
+    }
+    ul,li{
+      list-style: none;
+    }
+    .container{
+      perspective: 1300;
+      -webkit-perspective: 1300;
+    }
+    .boxlist{
+      position: absolute;
+      width: 630px;
+      height: 630px;
+      left: 45%;
+      margin-left: -315px;
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      transition: all 2s;
+    }
+    .boxlist li {
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+    transition: All 0.4s ease-in-out;
+    -webkit-transition: All 0.4s ease-in-out;
+    -moz-transition: All 0.4s ease-in-out;
+    -o-transition: All 0.4s ease-in-out;
+    }
+    .on li:hover {
+        box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+    }
+    .on {
+        -webkit-transform: rotateX(75deg) rotateY(0deg) rotateZ(45deg);
+        transform: rotateX(75deg) rotateY(0deg) rotateZ(45deg);
+    }
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <ul class="boxlist">
+      <li><img src="img/pic1.png"/></li>
+      <li><img src="img/pic2.png"/></li>
+      <li><img src="img/pic3.png"/></li>
+      <li><img src="img/pic4.png"/></li>
+      <li><img src="img/pic5.png"/></li>
+      <li><img src="img/pic6.png"/></li>
+      <li><img src="img/pic7.png"/></li>
+      <li><img src="img/pic8.png"/></li>
+      <li><img src="img/pic9.png"/></li>
+    </ul>
+  </div>
+</body>
+ <script>
+        var list=document.querySelector('.boxlist');
+        window.onload=function(){
+            setInterval(transition,1000);
+        }
+        function transition(){
+            list.className='on boxlist';
+        }
+    </script>
+</html>
+
+
+
+
